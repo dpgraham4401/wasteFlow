@@ -6,6 +6,7 @@ import logger from 'morgan';
 import indexRouter from './src/routes/index';
 import usersRouter from './src/routes/users';
 import {fileURLToPath} from "node:url";
+import {errorHandler} from "./src/middleware/errorHandler";
 
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
@@ -18,6 +19,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(errorHandler)
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
