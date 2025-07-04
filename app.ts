@@ -3,10 +3,10 @@ import path from "node:path";
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 
-import indexRouter from './src/routes/index';
-import usersRouter from './src/routes/users';
+import indexRouter from '@/routes/index.js';
+import usersRouter from '@/routes/users.js';
 import {fileURLToPath} from "node:url";
-import {errorHandler} from "./src/middleware/errorHandler";
+import {errorHandler} from "@/middleware/errorHandler.js";
 
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
