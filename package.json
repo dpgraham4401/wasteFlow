@@ -1,9 +1,11 @@
 {
   "name": "wasteflow",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "type": "module",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node bin/server",
+    "dev": "nodemon --exec tsx --watch src/ --watch bin/ --watch public/ --ext js,mjs,csj,json,ts bin/server"
   },
   "dependencies": {
     "cookie-parser": "~1.4.7",

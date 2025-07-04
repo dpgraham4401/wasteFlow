@@ -1,12 +1,9 @@
 #!/usr/bin/env node
+import app from "../app";
+import debug from "debug";
+import * as http from "node:http";
 
-/**
- * Module dependencies.
- */
-const app = require('../app');
-const debug = require('debug')('wasteflow:server');
-const http = require('http');
-
+const appDebug = debug('wasteflow:server');
 /**
  * Get port from environment and store in Express.
  */
@@ -83,5 +80,5 @@ function onListening() {
   const bind = typeof addr === 'string'
       ? 'pipe ' + addr
       : 'port ' + addr.port;
-  debug('Listening on ' + bind);
+  appDebug('Listening on ' + bind);
 }
